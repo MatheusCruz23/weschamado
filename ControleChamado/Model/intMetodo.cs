@@ -8,8 +8,9 @@ namespace ControleChamado.Model
 {
     public interface intMetodo
     {
-        void Cadastrar();
-        void Excluir();
-        void Editar();
+        void Cadastrar(List<String> Dados);
+        void Excluir(List<String> Dados);
+        void Editar(List<String> Dados);
+        void Listar(List<String> Dados);
     }
 }

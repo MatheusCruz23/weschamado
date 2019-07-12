@@ -6,6 +6,7 @@ namespace ControleChamado.Model
         //Atributos Proutos
         private int _idProduto;
         private string _produtoNome;
+        private string _mensagem;
 
         //Encapsulamento Produto
         public string ProdutoNome
@@ -17,6 +18,12 @@ namespace ControleChamado.Model
         public int IdProduto
         {
             get { return _idProduto; }
+        }
+
+        public string Mensagem
+        {
+            set { _mensagem = value; }
+            get { return _mensagem; }
         }
     }
 }
