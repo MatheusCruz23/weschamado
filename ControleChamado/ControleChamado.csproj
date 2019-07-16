@@ -51,6 +51,7 @@
     <Compile Include="Model\absProduto.cs" />
     <Compile Include="Model\ClienteController.cs" />
     <Compile Include="Model\intMetodo.cs" />
+    <Compile Include="Model\ProdutoValidacao.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

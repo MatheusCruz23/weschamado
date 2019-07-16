@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 namespace ControleChamado.Model
 {
     public abstract class absProduto
@@ -7,6 +8,12 @@ namespace ControleChamado.Model
         private int _idProduto;
         private string _produtoNome;
         private string _mensagem;
+        private List<string> _dados;
+
+        public absProduto(List<string> Dados)
+        {
+            
+        }
 
         //Encapsulamento Produto
         public string ProdutoNome
@@ -17,6 +24,7 @@ namespace ControleChamado.Model
 
         public int IdProduto
         {
+            set { _idProduto = value; }
             get { return _idProduto; }
         }
 
@@ -24,6 +32,12 @@ namespace ControleChamado.Model
         {
             set { _mensagem = value; }
             get { return _mensagem; }
+        }
+
+        public List<string> Dados
+        {
+            set { _dados = value; }
+            get { return _dados; }
         }
     }
 }

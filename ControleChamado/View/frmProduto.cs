@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleChamado.Model;
 
 namespace ControleChamado.View
 {
@@ -15,6 +16,18 @@ namespace ControleChamado.View
         public frmProduto()
         {
             InitializeComponent();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            List<String> Dados = new List<string>();
+
+            Dados.Add("0");
+            Dados.Add(txbProduto.Text);
+
+            ClienteController clienteController = new ClienteController(Dados);
+
+            MessageBox.Show(clienteController.Mensagem);
         }
     }
 }
