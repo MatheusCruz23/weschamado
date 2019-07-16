@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\intProdutoDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
-    <Compile Include="Model\absProduto.cs" />
+    <Compile Include="Model\atrProduto.cs" />
     <Compile Include="Model\ClienteController.cs" />
-    <Compile Include="Model\intMetodo.cs" />
     <Compile Include="Model\ProdutoValidacao.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -60,6 +60,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>
     </EmbeddedResource>

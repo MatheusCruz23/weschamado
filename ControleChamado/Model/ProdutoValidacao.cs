@@ -6,34 +6,30 @@ using System.Threading.Tasks;
 
 namespace ControleChamado.Model
 {
-    public class ProdutoValidacao :absProduto
+    public class ProdutoValidacao
     {
-        public ProdutoValidacao(List<string> Dados) : base (Dados)
-        {
+        public String mensagem;
+        public int id;
 
-        }
-
-        public void ValidaProduto()
+        public void ValidarProduto(List<String> dadosProduto)
         {
-            this.Mensagem = "";
+            this.mensagem = "";
+            if (dadosProduto[1].Equals(""))
+            {
+                this.mensagem = "Preencha corretamente o campo\n";
+            }
+            else if (dadosProduto[1].Length > 45)
+            {
+                this.mensagem += "O nome do produto muito extenso";
+            }
 
             try
             {
-                this.IdProduto = Convert.ToInt32(Dados[0]);
-
-                if (Dados[1].Equals(""))
-                {
-                    this.Mensagem = "Preencha o campo com o nome do produto";
-                }
-                else
-                {
-                    this.Mensagem = "Produto salvo com sucesso";
-                }
-
+                this.id = Convert.ToInt32(dadosProduto[0]);
             }
             catch (Exception e)
             {
-                this.Mensagem = "Erro ao salvar o produto";
+                this.mensagem += "ID inválido";
             }
         }
     }

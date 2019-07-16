@@ -8,7 +8,9 @@ namespace ControleChamado.DAO
 
         public Conexao()
         {
-            con.ConnectionString = "Data Source=DESKTOP-GLDGOIK;Initial Catalog=FastTicket;Integrated Security=True";
+            con.ConnectionString = "Data Source=DESKTOP-GLDGOIK; " +
+                "Initial Catalog=FastTicket;" +
+                "User ID=developer; Password=1234567";
         }
 
         public SqlConnection Conectar()

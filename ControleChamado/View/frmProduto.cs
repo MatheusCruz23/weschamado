@@ -20,14 +20,22 @@ namespace ControleChamado.View
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            List<String> Dados = new List<string>();
+            List<String> dadosProduto = new List<string>();
 
-            Dados.Add("0");
-            Dados.Add(txbProduto.Text);
+            dadosProduto.Add("0");
+            dadosProduto.Add(txbProduto.Text);
 
-            ClienteController clienteController = new ClienteController(Dados);
+            ClienteController clienteController = new ClienteController();
+            clienteController.CadastraProduto(dadosProduto);
 
-            MessageBox.Show(clienteController.Mensagem);
+            MessageBox.Show(clienteController.mensagem);
+        }
+
+        private void FrmProduto_Load(object sender, EventArgs e)
+        {
+            ClienteController clienteController = new ClienteController();
+
+            dgListaProduto.DataSource = clienteController.ListarProduto();
         }
     }
 }

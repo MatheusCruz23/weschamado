@@ -31,10 +31,10 @@
             this.lblProduto = new System.Windows.Forms.Label();
             this.txbProduto = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgListaProduto = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListaProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProduto
@@ -63,13 +63,13 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // dataGridView1
+            // dgListaProduto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.dgListaProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgListaProduto.Location = new System.Drawing.Point(21, 66);
+            this.dgListaProduto.Name = "dgListaProduto";
+            this.dgListaProduto.Size = new System.Drawing.Size(440, 150);
+            this.dgListaProduto.TabIndex = 3;
             // 
             // btnEditar
             // 
@@ -96,13 +96,14 @@
             this.ClientSize = new System.Drawing.Size(495, 318);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgListaProduto);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txbProduto);
             this.Controls.Add(this.lblProduto);
             this.Name = "frmProduto";
             this.Text = "frmProduto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProduto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgListaProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +114,7 @@
         private System.Windows.Forms.Label lblProduto;
         private System.Windows.Forms.TextBox txbProduto;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgListaProduto;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
     }

@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 
 namespace ControleChamado.DAO
 {
-    class ProdutoDAO : Model.intMetodo
+    public class ProdutoDAO : intProdutoDAO
     {
-        public String mensagem;
         Conexao conexao = new Conexao();
-        SqlCommand cmd = new SqlCommand();
+        SqlDataReader dataReader;
+        public String mensagem;        
 
-        public void Cadastrar(List<String> Dados)
+        public void CadastrarProduto(Model.atrProduto atrProduto)
         {
+            this.mensagem = "";
+            SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"insert into Produto (Produto) values (@produtoNome)";
 
-            cmd.Parameters.AddWithValue("@produtoNome", Dados[1]);
+            cmd.Parameters.AddWithValue("@produtoNome", atrProduto.ProdutoNome);
 
             try
             {
@@ -33,15 +35,24 @@ namespace ControleChamado.DAO
             }
             catch (Exception e)
             {
-                this.mensagem = "Erro ao tentar se conectar com o banco de dados";
+                this.mensagem = e.ToString();
             }
         }
 
-        public void Excluir(List<String> Dados)
+        public void ExcluirProduto(Model.atrProduto atrProduto)
         {
-            cmd.CommandText = @"delete from produto where IDProduto = @IdProduto";
 
-            cmd.Parameters.AddWithValue("@IdProduto", Dados[1]);
+        }
+
+        public void EditarProduto(Model.atrProduto atrProduto)
+        {
+            
+        }
+
+        public DataTable ListarProduto()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"Select * from Produto";
 
             try
             {
@@ -49,57 +60,18 @@ namespace ControleChamado.DAO
                 cmd.Connection = conexao.Conectar();
                 //Executar comando
                 cmd.ExecuteNonQuery();
-                //Desconectar
-                conexao.Desconectar();
+                SqlDataAdapter adptador = new SqlDataAdapter();
+                DataTable dt = new DataTable();
 
-                this.mensagem = "Excluido com sucesso";
+                adptador.Fill(dt);
+
+                return dt;
+                
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this.mensagem = "Erro ao tentar deletar o registro";
-            }
-        }
 
-        public void Editar(List<String> Dados)
-        {
-            cmd.CommandText = @"update Produto set Produto = @nomeProduto where IDProduto = @IdProduto";
-
-            cmd.Parameters.AddWithValue("@IdProduto", Dados[0]);
-            cmd.Parameters.AddWithValue("@nomeProduto", Dados[1]);
-
-            try
-            {
-                //Conectar no banco
-                cmd.Connection = conexao.Conectar();
-                //Executar comando
-                cmd.ExecuteNonQuery();
-                //Desconectar
-                conexao.Desconectar();
-
-                this.mensagem = "Editado com sucesso";
-            }
-            catch (Exception e)
-            {
-                this.mensagem = "Erro ao editar";
-            }
-        }
-
-        public void Listar(List<String> Dados)
-        {
-            cmd.CommandText = @"select * from Produto";
-
-            try
-            {
-                //conectar com o banco
-                cmd.Connection = conexao.Conectar();
-                //Executar comando
-                cmd.ExecuteNonQuery();
-                //Desconectar banco
-                conexao.Desconectar();
-            }
-            catch (Exception e)
-            {
-                this.mensagem = "";
+                throw;
             }
         }
     }

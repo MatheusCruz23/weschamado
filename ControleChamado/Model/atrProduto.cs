@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 namespace ControleChamado.Model
 {
-    public abstract class absProduto
+    public class atrProduto
     {
         //Atributos Proutos
         private int _idProduto;
         private string _produtoNome;
         private string _mensagem;
         private List<string> _dados;
-
-        public absProduto(List<string> Dados)
-        {
-            
-        }
-
+        
         //Encapsulamento Produto
         public string ProdutoNome
         {
