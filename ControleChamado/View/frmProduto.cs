@@ -25,7 +25,7 @@ namespace ControleChamado.View
             dadosProduto.Add("0");
             dadosProduto.Add(txbProduto.Text);
 
-            ClienteController clienteController = new ClienteController();
+            ProdutoController clienteController = new ProdutoController();
             clienteController.CadastraProduto(dadosProduto);
 
             MessageBox.Show(clienteController.mensagem);
@@ -33,9 +33,9 @@ namespace ControleChamado.View
 
         private void FrmProduto_Load(object sender, EventArgs e)
         {
-            ClienteController clienteController = new ClienteController();
+            ProdutoController produtoController = new ProdutoController();
 
-            dgListaProduto.DataSource = clienteController.ListarProduto();
+            dgListaProduto.DataSource = produtoController.ListarProduto();
         }
     }
 }

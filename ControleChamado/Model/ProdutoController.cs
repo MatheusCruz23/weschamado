@@ -8,7 +8,7 @@ using System.Data;
 
 namespace ControleChamado.Model
 {
-    public class ClienteController
+    public class ProdutoController
     {
         public String mensagem;
         public void CadastraProduto(List<String> dadosProduto)
@@ -34,10 +34,10 @@ namespace ControleChamado.Model
         {
             try
             {
-                ProdutoDAO produto = new ProdutoDAO();
+                ProdutoDAO produtoDAO = new ProdutoDAO();
                 DataTable dt = new DataTable();
 
-                dt = produto.ListarProduto();
+                dt = produtoDAO.ListarProduto();
 
                 return dt;
             }

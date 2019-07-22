@@ -50,7 +50,7 @@
     <Compile Include="DAO\intProdutoDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="Model\atrProduto.cs" />
-    <Compile Include="Model\ClienteController.cs" />
+    <Compile Include="Model\ProdutoController.cs" />
     <Compile Include="Model\ProdutoValidacao.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>

@@ -349,4 +349,4 @@ healthchecksdb
 MigrationBackup/
 
 # caminho de conexao
-ControleChamado/ControleChamado/DAO/conexao.cs
+.conexao.cs

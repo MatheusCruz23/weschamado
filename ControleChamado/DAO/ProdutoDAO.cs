@@ -46,7 +46,9 @@ namespace ControleChamado.DAO
 
         public void EditarProduto(Model.atrProduto atrProduto)
         {
-            
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"UPDATE Produto SET ";
+
         }
 
         public DataTable ListarProduto()
@@ -58,9 +60,8 @@ namespace ControleChamado.DAO
             {
                 //conectar com o banco
                 cmd.Connection = conexao.Conectar();
-                //Executar comando
-                cmd.ExecuteNonQuery();
                 SqlDataAdapter adptador = new SqlDataAdapter();
+                adptador.SelectCommand = cmd;
                 DataTable dt = new DataTable();
 
                 adptador.Fill(dt);
