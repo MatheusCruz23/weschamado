@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+
+
 namespace ControleChamado.Model
 {
     public class atrProduto

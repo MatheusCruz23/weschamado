@@ -46,8 +46,29 @@ namespace ControleChamado.DAO
 
         public void EditarProduto(Model.atrProduto atrProduto)
         {
+            this.mensagem = "";
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"UPDATE Produto SET ";
+            cmd.CommandText = @"UPDATE Produto SET Produto = @nomeProduto where IDProduto = @id";
+
+            cmd.Parameters.AddWithValue("@id", atrProduto.IdProduto);
+            cmd.Parameters.AddWithValue("@nomeProduto", atrProduto.ProdutoNome);
+
+            try
+            {
+                //conectar com o banco
+                cmd.Connection = conexao.Conectar();
+                //Executar comando
+                cmd.ExecuteNonQuery();
+                //desconectar
+                conexao.Desconectar();
+
+                this.mensagem = "Editado com sucesso";
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.ToString();
+            }
+
 
         }
 
