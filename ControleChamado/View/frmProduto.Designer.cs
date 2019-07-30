@@ -34,6 +34,7 @@
             this.dgListaProduto = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.lblIdProduto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.dgListaProduto.Name = "dgListaProduto";
             this.dgListaProduto.Size = new System.Drawing.Size(440, 150);
             this.dgListaProduto.TabIndex = 3;
+            this.dgListaProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListaProduto_CellClick);
             // 
             // btnEditar
             // 
@@ -79,6 +81,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -88,12 +91,23 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // lblIdProduto
+            // 
+            this.lblIdProduto.AutoSize = true;
+            this.lblIdProduto.Location = new System.Drawing.Point(240, 234);
+            this.lblIdProduto.Name = "lblIdProduto";
+            this.lblIdProduto.Size = new System.Drawing.Size(18, 13);
+            this.lblIdProduto.TabIndex = 6;
+            this.lblIdProduto.Text = "ID";
             // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 318);
+            this.Controls.Add(this.lblIdProduto);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgListaProduto);
@@ -117,5 +131,6 @@
         private System.Windows.Forms.DataGridView dgListaProduto;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Label lblIdProduto;
     }
 }

@@ -47,5 +47,43 @@ namespace ControleChamado.Model
                 throw;
             }
         }
+
+        public void EditarProduto(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            ProdutoValidacao produtoValidacao = new ProdutoValidacao();
+            produtoValidacao.ValidarProduto(dadosProduto);
+            if (produtoValidacao.mensagem.Equals(""))
+            {
+                atrProduto atributoProduto = new atrProduto();
+                atributoProduto.Dados = dadosProduto;
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.EditarProduto(atributoProduto);
+                this.mensagem = produtoDAO.mensagem;
+            }
+            else
+            {
+                this.mensagem = produtoValidacao.mensagem;
+            }
+        }
+
+        public void ExcluirProduto(List<String> dadosProduto)
+        {
+            this.mensagem = "";
+            ProdutoValidacao produtoValidacao = new ProdutoValidacao();
+            produtoValidacao.ValidarProduto(dadosProduto);
+            if (produtoValidacao.mensagem.Equals(""))
+            {
+                atrProduto atributoProduto = new atrProduto();
+                atributoProduto.Dados = dadosProduto;
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.ExcluirProduto(atributoProduto);
+                this.mensagem = produtoDAO.mensagem;
+            }
+            else
+            {
+                this.mensagem = produtoValidacao.mensagem;
+            }
+        }
     }
 }
