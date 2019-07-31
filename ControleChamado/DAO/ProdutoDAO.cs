@@ -14,6 +14,7 @@ namespace ControleChamado.DAO
         //SqlDataReader dataReader;
         public String mensagem;        
 
+        //Método para fazer a inserção do produto no banco de dados
         public void CadastrarProduto(Model.atrProduto atrProduto)
         {
             this.mensagem = "";
@@ -39,6 +40,7 @@ namespace ControleChamado.DAO
             }
         }
 
+        //Método para fazer a exclusão do registro do banco
         public void ExcluirProduto(Model.atrProduto atrProduto)
         {
             this.mensagem = "";
@@ -64,6 +66,7 @@ namespace ControleChamado.DAO
             }
         }
 
+        //Método para editar o produto do banco
         public void EditarProduto(Model.atrProduto atrProduto)
         {
             this.mensagem = "";
@@ -92,6 +95,7 @@ namespace ControleChamado.DAO
 
         }
 
+        //Método para fazer a busca dos registro no banco de dados
         public DataTable ListarProduto()
         {
             SqlCommand cmd = new SqlCommand();

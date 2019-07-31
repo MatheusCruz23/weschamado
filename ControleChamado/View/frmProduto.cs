@@ -18,6 +18,7 @@ namespace ControleChamado.View
             InitializeComponent();
         }
 
+        //Método para salvar as informações do produto
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             List<String> dadosProduto = new List<string>();
@@ -33,6 +34,7 @@ namespace ControleChamado.View
             MessageBox.Show(produtoController.mensagem);
         }
 
+        //Método para carregar o DatagridView ao abrir a janela
         private void FrmProduto_Load(object sender, EventArgs e)
         {
             ProdutoController produtoController = new ProdutoController();
@@ -40,6 +42,7 @@ namespace ControleChamado.View
             dgListaProduto.DataSource = produtoController.ListarProduto();
         }
 
+        //Método para selecionar as células do DataGridView
         private void DgListaProduto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex;
@@ -50,6 +53,7 @@ namespace ControleChamado.View
 
         }
 
+        //Método do botão editar
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             List<String> dadosProduto = new List<string>();
@@ -67,6 +71,7 @@ namespace ControleChamado.View
             MessageBox.Show(produtoController.mensagem);
         }
 
+        //Método do botão excluir
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
 

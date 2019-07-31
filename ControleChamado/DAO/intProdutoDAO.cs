@@ -7,6 +7,7 @@ using System.Data;
 
 namespace ControleChamado.DAO
 {
+    //Interface para obrigar a utilização dos métodos abaixo
     interface intProdutoDAO
     {
         void CadastrarProduto(Model.atrProduto atrProduto);

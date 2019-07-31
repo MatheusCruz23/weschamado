@@ -11,6 +11,8 @@ namespace ControleChamado.Model
     public class ProdutoController
     {
         public String mensagem;
+
+        //Método para gerenciar o cadastro de produto
         public void CadastraProduto(List<String> dadosProduto)
         {
             this.mensagem = "";
@@ -30,6 +32,7 @@ namespace ControleChamado.Model
             }
         }
 
+        //Método para gerenciar a listagem de produto
         public DataTable ListarProduto()
         {
             try
@@ -48,6 +51,7 @@ namespace ControleChamado.Model
             }
         }
 
+        //Método para editar o produto
         public void EditarProduto(List<String> dadosProduto)
         {
             this.mensagem = "";
@@ -67,6 +71,7 @@ namespace ControleChamado.Model
             }
         }
 
+        //Método para gerenciar a exclusão do produto
         public void ExcluirProduto(List<String> dadosProduto)
         {
             this.mensagem = "";
