@@ -35,6 +35,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblIdProduto = new System.Windows.Forms.Label();
+            this.lblIndexDataGrid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,11 +103,21 @@
             this.lblIdProduto.TabIndex = 6;
             this.lblIdProduto.Text = "ID";
             // 
+            // lblIndexDataGrid
+            // 
+            this.lblIndexDataGrid.AutoSize = true;
+            this.lblIndexDataGrid.Location = new System.Drawing.Point(278, 234);
+            this.lblIndexDataGrid.Name = "lblIndexDataGrid";
+            this.lblIndexDataGrid.Size = new System.Drawing.Size(52, 13);
+            this.lblIndexDataGrid.TabIndex = 7;
+            this.lblIndexDataGrid.Text = "IndexGrid";
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 318);
+            this.Controls.Add(this.lblIndexDataGrid);
             this.Controls.Add(this.lblIdProduto);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -132,5 +143,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblIdProduto;
+        private System.Windows.Forms.Label lblIndexDataGrid;
     }
 }

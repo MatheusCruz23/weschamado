@@ -28,6 +28,8 @@ namespace ControleChamado.View
             ProdutoController produtoController = new ProdutoController();
             produtoController.CadastraProduto(dadosProduto);
 
+            txbProduto.Clear();
+
             MessageBox.Show(produtoController.mensagem);
         }
 
@@ -38,25 +40,13 @@ namespace ControleChamado.View
             dgListaProduto.DataSource = produtoController.ListarProduto();
         }
 
-        private void DgListaProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*List<String> dadosProduto = new List<string>();
-            string msg = String.Format("Row: {0}, Column: {1}",
-            dgListaProduto.CurrentCell.RowIndex,
-            dgListaProduto.CurrentCell.ColumnIndex);
-            MessageBox.Show(msg, "Current Cell");*/
-
-            /*string msg = this.dgListaProduto.Rows[dgListaProduto.CurrentCell.RowIndex].Cells[dgListaProduto.CurrentCell.ColumnIndex].Value.ToString();
-            MessageBox.Show(msg);
-            txbProduto.Text = msg;*/
-        }
-
         private void DgListaProduto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex;
             DataGridViewRow row = dgListaProduto.Rows[indexRow];
             lblIdProduto.Text = row.Cells[0].Value.ToString();
             txbProduto.Text = row.Cells[1].Value.ToString();
+            lblIndexDataGrid.Text = Convert.ToString(indexRow);
 
         }
 
@@ -70,6 +60,8 @@ namespace ControleChamado.View
             ProdutoController produtoController = new ProdutoController();
             produtoController.EditarProduto(dadosProduto);
 
+            txbProduto.Clear();
+
             dgListaProduto.DataSource = produtoController.ListarProduto();
 
             MessageBox.Show(produtoController.mensagem);
@@ -77,7 +69,8 @@ namespace ControleChamado.View
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show(this, "Deseja realmente excluir essa informação?", 
+
+            var result = MessageBox.Show(this, "Deseja realmente excluir essa informação?",
                 "Excluir", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
@@ -95,8 +88,7 @@ namespace ControleChamado.View
 
                 MessageBox.Show(produtoController.mensagem);
 
-            }
-            
+            }                        
         }
     }
 }
